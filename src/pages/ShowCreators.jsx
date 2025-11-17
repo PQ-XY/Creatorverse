@@ -45,14 +45,12 @@ const ShowCreators = () => {
     }
 
   return (
-    <div className = "show-creators">
-        <div>
-            <h1>Creatorverse</h1>
-            <button onClick={() => navigate('/creator/add')}
-                className="btn-add">
-                Add New Creator
-            </button>
-        </div>
+    <main className = "container">
+        <h1 style={{fontSize: "5rem"}}>Creatorverse</h1>
+        <button onClick={() => navigate('/creator/add')}
+            className="primary" style={{marginBottom: '2rem'}}>
+            Add New Creator
+        </button>
         <div className="creators-grid">
             {creators.length ===0 ? (
                 <p className='empty-state'>No creators found. Add creator!</p>
@@ -67,8 +65,7 @@ const ShowCreators = () => {
                 ))
             )}
         </div>
-      
-    </div>
+    </main>
   )
 }
 

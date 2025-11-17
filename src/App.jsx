@@ -27,9 +27,9 @@ const App = () => {
   ]);
 
   return (
-    <>
+    <main className='container'>
       {routes}
-    </>
+    </main>
   )
 }
 
