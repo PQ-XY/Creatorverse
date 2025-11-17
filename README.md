@@ -1,10 +1,10 @@
-# WEB103 Prework - *👉🏿 Creatorverse*
+# WEB103 Prework - * Creatorverse*
 
-Submitted by: **👉🏿 Yao Xu**
+Submitted by: Yao Xu
 
-About this web app: **👉🏿 frontend application that supports CRUD (create, read, update, and delete) operations on your favorite content creators.**
+About this web app: frontend application that supports CRUD (create, read, update, and delete) operations on your favorite content creators.
 
-Time spent: **👉🏿 24 hours
+Time spent: 24 hours
 
 ## Required Features
 
@@ -35,14 +35,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Creatorverse.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with Loom 
 
 ## Notes
 
@@ -50,7 +45,7 @@ Describe any challenges encountered while building the app or any additional con
 
 ## License
 
-Copyright [👉🏿 2025] [👉🏿 Yao Xu]
+Copyright [2025] [Yao Xu]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
