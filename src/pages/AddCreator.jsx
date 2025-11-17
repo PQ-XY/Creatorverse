@@ -9,7 +9,7 @@ const AddCreator = () => {
         name: '',
         description: '',
         url: '',
-        image_url: ''
+        imageURL: ''
     });
     
     const [submitting, setSubmitting] = useState(false);
@@ -33,7 +33,7 @@ const AddCreator = () => {
                         name: formData.name,
                         url: formData.url,
                         description: formData.description,
-                        image_url: formData.image_url || null
+                        imageURL: formData.imageURL || null
                     }
                 ]);
             
@@ -94,12 +94,12 @@ const AddCreator = () => {
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="image_url">Image URL:</label>
+                <label htmlFor="imageURL">Image URL:</label>
                 <input 
                     type="url"
-                    id="image_url"
-                    name="image_url"
-                    value={formData.image_url}
+                    id="imageURL"
+                    name="imageURL"
+                    value={formData.imageURL}
                     onChange={handleChange}
                     placeholder="https://example.com/image.jpg"
                     disabled={submitting}
@@ -109,7 +109,7 @@ const AddCreator = () => {
                 <button type="submit" className="btn-save" disabled={submitting}>
                     {submitting ? 'Adding...' : 'Add Creator'}
                 </button>
-                <button type="button" onclick={()=> navigate('/')} className="btn-cancel" disabled={submitting}>
+                <button type="button" onClick={()=> navigate('/')} className="btn-cancel" disabled={submitting}>
                     cancel
                 </button>
             </div>

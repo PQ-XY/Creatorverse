@@ -53,9 +53,9 @@ const ViewCreator = () => {
     <div className="view-creator">
         <button onClick ={()=> navigate('/')} className='btn-back'>back</button>
         <div className='creator-detail'>
-            {creator.image_url &&(
+            {creator.imageURL &&(
                 <img 
-                    src={creator.image_url} 
+                    src={creator.imageURL} 
                     alt={creator.name} 
                     className="creator-image" 
                 />

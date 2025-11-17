@@ -9,7 +9,7 @@ const EditCreator = () => {
         name: '',
         description: '',
         url: '',
-        image_url: ''
+        imageURL: ''
     });
 
     const [originalName, setOriginalName] = useState('');
@@ -35,7 +35,7 @@ const EditCreator = () => {
                     name: data.name || '',
                     description: data.description || '',
                     url: data.url || '',
-                    image_url: data.image_url || ''
+                    imageURL: data.imageURL || ''
                 });
             }
         } catch (error) {
@@ -75,7 +75,7 @@ const EditCreator = () => {
                                 name: formData.name,
                                 url: formData.url,
                                 description: formData.description,
-                                image_url: formData.image_url || null
+                                imageURL: formData.imageURL || null
                             }
                         ]);
                     
@@ -89,7 +89,7 @@ const EditCreator = () => {
                         .update({
                             description: formData.description,
                             url: formData.url,
-                            image_url: formData.image_url || null
+                            imageURL: formData.imageURL || null
                         })
                         .eq('name', originalName);
                 }
@@ -154,12 +154,12 @@ const EditCreator = () => {
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="image_url">Image URL:</label>
+                <label htmlFor="imageURL">Image URL:</label>
                 <input 
                     type="url"
-                    id="image_url"
-                    name="image_url"
-                    value={formData.image_url || ''}
+                    id="imageURL"
+                    name="imageURL"
+                    value={formData.imageURL || ''}
                     onChange={handleChange}
                 />
             </div>

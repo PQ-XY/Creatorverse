@@ -4,8 +4,8 @@ import React from "react";
 const Card = ({ creator, onView, onEdit }) => {
     return (
         <div className="card"> 
-            {creator.image_url &&(
-                <img src={creator.image_url} 
+            {creator.imageURL &&(
+                <img src={creator.imageURL} 
                 alt={creator.name} 
                 className="card-image" 
                 />
