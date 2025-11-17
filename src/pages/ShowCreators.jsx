@@ -46,7 +46,7 @@ const ShowCreators = () => {
 
   return (
     <main className = "container">
-        <h1 style={{fontSize: "5rem"}}>Creatorverse</h1>
+        <h1 style={{fontSize: "5rem", color:"white"}}>Creatorverse</h1>
         <button onClick={() => navigate('/creator/add')}
             className="primary" style={{marginBottom: '2rem'}}>
             Add New Creator

@@ -52,7 +52,7 @@ const AddCreator = () => {
 
   return (
     <div>
-        <button onClick ={()=> navigate('/')} className='btn-back'>back</button>
+        <button onClick ={()=> navigate('/')} className='primary btn-back'>back</button>
         <h1>Edit New Creator</h1>
         <form onSubmit={handleSubmit} className="creator-form">
             <div className="form-group">

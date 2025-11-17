@@ -50,29 +50,38 @@ const ViewCreator = () => {
     }
 
   return (
-    <div className="view-creator">
-        <button onClick ={()=> navigate('/')} className='btn-back'>back</button>
+    <main className="container">
+        <button onClick ={()=> navigate('/')} className='primary btn-back'>back</button>
         <div className='creator-detail'>
             {creator.imageURL &&(
                 <img 
                     src={creator.imageURL} 
                     alt={creator.name} 
-                    className="creator-image" 
+                    className="creator-image"
+                    style={{
+                    width: '100%',
+                    borderRadius: '0.5rem',
+                    objectFit: 'cover',
+                    maxHeight: '700px',
+                    marginBottom: '1rem'
+                }} 
                 />
             )}
-            <h2 className="creator-name">{creator.name}</h2>
-            <p className="creator-description">{creator.description}</p>
+            <h2 className="creator-name" style={{color:"white"}}>{creator.name}</h2>
+            <p className="creator-description" style={{color:"white"}}>{creator.description}</p>
             <a
-                href="{creator.url}"
+                href={creator.url}
                 target="_blank"
+                role="button"
                 rel="noopener noreferrer"
-                className="creator-url"
+                className="primary"
+                style={{marginBottom:"1rem"}}
             >
                 Visit Website
             </a>
             <div className='creator-actions'>
                 <button 
-                    className='btn-edit'
+                    className='primary'
                     onClick ={() => navigate(`/creator/${creator.name}/edit`)}
                 >
                     Edit Creator
@@ -80,7 +89,7 @@ const ViewCreator = () => {
             </div>
         </div>
       
-    </div>
+    </main>
   )
 }
 

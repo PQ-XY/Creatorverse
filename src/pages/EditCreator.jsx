@@ -38,6 +38,7 @@ const EditCreator = () => {
                     url: data.url || '',
                     imageURL: data.imageURL || ''
                 });
+                setOriginalName(data.name);
             }
         } catch (error) {
             console.error('Error:', error);
@@ -59,11 +60,11 @@ const EditCreator = () => {
         setSubmitting(true);
 
             try {
-                if (formData.name !== orginalName) {
+                if (formData.name !== originalName) {
                     const {error:deleteError} = await supabase
                         .from('creators')
                         .delete()
-                        .eq('name', orginalName);
+                        .eq('name', originalName);
                     
                     if (deleteError) {
                         throw deleteError;
@@ -85,7 +86,7 @@ const EditCreator = () => {
                     }
                     navigate(`/creators/${formData.name}`);
                 } else {
-                    const {error} = await supabase
+                    const {error:updateError} = await supabase
                         .from('creators')
                         .update({
                             description: formData.description,
@@ -93,12 +94,13 @@ const EditCreator = () => {
                             imageURL: formData.imageURL || null
                         })
                         .eq('name', originalName);
+
+                    if (updateError) {
+                        throw updateError;
+                    }
+                    navigate(`/creators/${originalName}`);
                 }
 
-                if (error) {
-                    throw error;
-                }
-                navigate(`/creators/${originalName}`);
             } catch (error) {
                 console.error('Error updating creator:', error);
                 alert('An error occurred while updating the creator.');
@@ -142,8 +144,9 @@ const EditCreator = () => {
     }
   
   return (
-    <div className="edit-creator">
-        <button onClick ={()=> navigate('/')} className='btn-back'>back</button>
+    <main className="container">
+
+        <button onClick ={()=> navigate('/')} className='primary btn-back'>back</button>
         <h1>Edit Creator</h1>
         <form onSubmit={handleSubmit} className="creator-form">
             <div className="form-group">
@@ -201,7 +204,7 @@ const EditCreator = () => {
                 </button>
             </div>
         </form>
-    </div>
+    </main>
   )
 }
 
