@@ -15,6 +15,7 @@ const EditCreator = () => {
     const [originalName, setOriginalName] = useState('');
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
+    const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
         fetchCreator();
@@ -107,6 +108,31 @@ const EditCreator = () => {
 
     };  
 
+    const handleDelete = async () => {
+        if (!window.confirm('Are you sure you want to delete this creator?')) {
+            return;
+        }
+        setDeleting(true);
+        try {
+            const {error} = await supabase
+                .from('creators')
+                .delete()
+                .eq('name', originalName);
+            
+            if (error) {
+                console.error('Error deleting creator:', error);
+                alert('An error occurred while deleting the creator.');
+            } else {
+                navigate('/');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while deleting the creator.');
+        } finally {
+            setDeleting(false);
+        }
+    };
+
     if (loading) {
         return (
             <div className="edit-creator">
@@ -169,6 +195,9 @@ const EditCreator = () => {
                 </button>
                 <button type='button' onClick={() => navigate(-1)} className='btn-cancel' disabled={submitting}>
                     cancel
+                </button>
+                <button type="button" className="btn-delete" onClick={handleDelete} disabled={deleting}>
+                    {deleting ? 'Deleting...' : 'Delete Creator'}
                 </button>
             </div>
         </form>
